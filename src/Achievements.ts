@@ -11,11 +11,12 @@ export class Achievements {
         this.background = background;
         this.achievements = new Container();
         this.achievements.x = this.app.screen.width / 1 * 2.5;
-        this.achievements.y = 900;
+        this.achievements.y = 800;
         this.halo = Sprite.from("halo.png");
     }
 
     createAchievements() {
+        this.achievements.scale.set(0.7);
         const tierOne = new Container();
         const tierTwo = new Container();
         const tierThree = new Container();
@@ -26,54 +27,98 @@ export class Achievements {
         const tierThreeSprite = Sprite.from("tier_diamond.png");
         const tierFourSprite = Sprite.from("tier_diamond.png");
 
-        const tierOneAmount = new Text('10', {
+        const tierOneAmount = new Text('#', {
             fontFamily : 'Sneak',
             fontSize: 84,
             fontWeight: '900',
             fill : 0xffffff,
             align : 'center',
           });
-        tierOneAmount.x = 45;
+        tierOneAmount.x = 75;
         tierOneAmount.y = 45;
 
-        const tierTwoAmount = new Text('30', {
+        const tierOneHeader = new Text('Tier 1', {
+            fontFamily : 'GT Sectra',
+            fontSize: 64,
+            fontWeight: '900',
+            fill : 0xffffff,
+            align : 'center',
+          });
+        tierOneHeader.x = 0;
+        tierOneHeader.y = 208;
+
+        const tierTwoAmount = new Text('#', {
             fontFamily : 'Sneak',
             fontSize: 84,
             fontWeight: '900',
             fill : 0xffffff,
             align : 'center',
           });
-        tierTwoAmount.x = 45;
+        tierTwoAmount.x = 75;
         tierTwoAmount.y = 45;
 
-        const tierThreeAmount = new Text('50', {
+        const tierTwoHeader = new Text('Tier 2', {
+            fontFamily : 'GT Sectra',
+            fontSize: 64,
+            fontWeight: '900',
+            fill : 0xffffff,
+            align : 'center',
+          });
+        tierTwoHeader.x = 0;
+        tierTwoHeader.y = 208;
+
+        const tierThreeAmount = new Text('#', {
             fontFamily : 'Sneak',
             fontSize: 84,
             fontWeight: '900',
             fill : 0xffffff,
             align : 'center',
           });
-        tierThreeAmount.x = 45;
+        tierThreeAmount.x = 75;
         tierThreeAmount.y = 45;
 
-        const tierFourAmount = new Text('100', {
+        const tierThreeHeader = new Text('Tier 3', {
+            fontFamily : 'GT Sectra',
+            fontSize: 64,
+            fontWeight: '900',
+            fill : 0xffffff,
+            align : 'center',
+          });
+        tierThreeHeader.x = 0;
+        tierThreeHeader.y = 208;
+
+        const tierFourAmount = new Text('#', {
             fontFamily : 'Sneak',
             fontSize: 84,
             fontWeight: '900',
             fill : 0xffffff,
             align : 'center',
           });
-        tierFourAmount.x = 45;
+        tierFourAmount.x = 75;
         tierFourAmount.y = 45;
+
+        const tierFourHeader = new Text('Tier 4', {
+            fontFamily : 'GT Sectra',
+            fontSize: 64,
+            fontWeight: '900',
+            fill : 0xffffff,
+            align : 'center',
+          });
+        tierFourHeader.x = 0;
+        tierFourHeader.y = 208;
 
         tierOne.addChild(tierOneSprite);
         tierOne.addChild(tierOneAmount);
+        tierOne.addChild(tierOneHeader);
         tierTwo.addChild(tierTwoSprite);
         tierTwo.addChild(tierTwoAmount);
+        tierTwo.addChild(tierTwoHeader);
         tierThree.addChild(tierThreeSprite);
         tierThree.addChild(tierThreeAmount);
+        tierThree.addChild(tierThreeHeader);
         tierFour.addChild(tierFourSprite);
         tierFour.addChild(tierFourAmount);
+        tierFour.addChild(tierFourHeader);
 
         tierOne.scale.set(0.8);
         tierOne.x = -750;
@@ -87,7 +132,7 @@ export class Achievements {
         tierFour.scale.set(0.8);
         tierFour.x = 550;
         tierFour.y = -70;
-        this.background.addChild(this.achievements);
+        this.app.stage.addChild(this.achievements);
         this.halo.pivot.set(682, 234);
         // this.halo.x = 1500;
         this.achievements.addChild(this.halo);

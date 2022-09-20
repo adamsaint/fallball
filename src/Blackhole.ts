@@ -132,7 +132,7 @@ export class Blackhole {
     }
 
     createBlackhole() {
-        this.blackHole.scale.set(0.8);
+        this.blackHole.scale.set(0.7);
         this.background.addChild(this.blackHole);
 
         this.outerDebris.pivot.set(985, 949);
@@ -165,15 +165,14 @@ export class Blackhole {
         // Add a circle
         this.hole.lineStyle(5, 0xffffff, 1);
         this.hole.beginFill(0x000000, 1);
-        this.hole.drawEllipse(0, 0, 300, 300);
+        this.hole.drawEllipse(0, 0, 250, 250);
         this.hole.blendMode = BLEND_MODES.MULTIPLY;
         this.hole.endFill();
         this.app.stage.addChild(this.hole);
     }
 
     grow(amount: number) {
-        gsap.to(this.hole, {pixi:{scale: amount}, ease: 'slow', duration: 3});
-        console.log( 'grow')
+        gsap.to(this.hole, {pixi:{scale: amount}, ease: 'slow', duration: 5});
     }
 
     update(deltaTime: number) {

@@ -8,6 +8,36 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 
 	<style>
+		@font-face {
+    font-family: 'gt_sectrablack';
+    src: url('gt-sectra-black-webfont.woff2') format('woff2'),
+         url('gt-sectra-black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'gt_sectraregular';
+    src: url('gt-sectra-regular-webfont.woff2') format('woff2'),
+         url('gt-sectra-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'sneakmono';
+    src: url('sneak-mono-webfont.woff2') format('woff2'),
+         url('sneak-mono-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 		html,
 		body {
 			display: grid;
@@ -15,6 +45,7 @@
 			grid-template-rows: 1fr 1fr 1fr;
 			grid-template-areas: "header header header"
                       			 "intro content content" 
+								 "explain explain explain"
                       			 "footer footer footer";
 			margin: 0;
 			padding: 0;
@@ -43,8 +74,20 @@
 			text-align: center;;
 		}
 
+		.logo {
+			font-family: 'gt_sectrablack';
+		}
+
+		.header-cta {
+			padding: 1rem;
+			font-family: 'sneakmono';
+			border: 1px solid white;
+			border-radius: 8px;
+			font-size: 1.5rem;
+		}
+
 		.drop {
-			font-family: 'Sneak Mono';
+			font-family: 'sneakmono';
 			font-size: 1.3rem;
 			text-transform: uppercase;
 		}
@@ -68,13 +111,18 @@
 
 		.intro {
 			font-size: 2rem;
-			font-family: 'GT Sectra';
+			font-family: 'gt_sectraregular';
 			text-shadow: 0px 4px 40px rgba(0,0,0,1);
 		}
 
 		.intro h1 {
 			line-height: 0.9;
 			font-weight: 900;
+			font-family: 'gt_sectrablack';
+		}
+
+		.intro p {
+			font-size: 1.8rem;
 		}
 
 		#sign-up {
@@ -106,7 +154,7 @@
 			border: 2px solid white;
 			border-radius: 8px;
 			cursor: pointer;
-			font-family: 'Sneak Mono';
+			font-family: 'sneakmono';
 		}
 
 		#sign-up-submit {
@@ -120,15 +168,42 @@
 			border-radius: 8px;
 			cursor: pointer;
 			margin-top: 4rem;
-			font-family: 'Sneak Mono';
+			font-family: 'sneakmono';
+		}
+
+		.explainer {
+			display: flex;
+			flex-direction: column;
+			grid-area: explain / explain / explain / explain;
+			margin-bottom: 4rem;
+		}
+		
+		.explainer h1 {
+			text-align: center;
+			font-size: 4rem;
+			font-family: 'gt_sectrablack';
+		}
+
+		.explainer img {
+			margin: 0 auto;
+		}
+
+		.footer {
+			grid-area: footer / footer / footer / footer;
+		}
+
+		.footer h1 {
+			text-align: center;
+			font-size: 4rem;
+			font-family: 'gt_sectrablack';
 		}
 	</style>
 
 </head>
 
 <body>
-	<header><span>BLASEBALL</span><span class="drop">The Next Drop is Friday, Oct 7th
-		3:04:21 pm PST</span><span>SADDLE UP</span></header>
+	<header><span class="logo">BLASEBALL</span><span class="drop">The Next Drop is Friday, Oct 7th
+		3:04PM PST</span><span class="header-cta">Sign Up</span></header>
 	<!-- <noscript>Please enable JavaScript in your web browser to view this page.</noscript> -->
 	<div class="hero-container">
 		<div class="intro">
@@ -136,7 +211,7 @@
 			<p>After a long hiatus, or a quantum blip, Blaseball is Returning. Everyone’s favorite massively multiplayer horror Internet Blaseball League returns with a Big Bang.</p>
 			<p>Mere seconds after a Black Hole swallowed the League, the Universe, and everyone we came to love (and loathe), a rift opens up over the Desert.</p>
 			<p>Will the Fans Team Up to help the player’s escape the pull of The Black Hole? Or will the memories of the past be scattered like the Sands of Time?</p>
-			<div id="cta-hero">SADDLE UP</div>
+			<div id="cta-hero">Sign Up</div>
 		</div>
 		<div id="sign-up">
 			Input forms, sign up details, etc.
@@ -145,6 +220,13 @@
 	</div>
 	<div id="pixi-content">
 		<canvas id="pixi-canvas" />
+	</div>
+	<div class="explainer">
+		<h1>But what is Blaseball?</h1>
+		<img src="/meala.png" alt="">
+	</div>
+	<div class="footer">
+		<h1>Footer Content</h1>
 	</div>
 </body>
 
