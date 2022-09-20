@@ -43,7 +43,7 @@ function handleSignUpClick() {
 	blackhole.grow(0.75);
 	gsap.to(heroContainer, {opacity: 0, transform: "perspective(1000px) rotateY(15deg)", duration: 1, ease: 'circ'});
 	gsap.to(background, {pixi:{scale: 0.98, alpha: 0.05}, ease: 'slow', duration: 2});
-	gsap.to(achievements, {pixi:{scale: 0.5, alpha: 0.0}, ease: 'slow', duration: 2});
+	gsap.to(achievements.achievements, {pixi:{scale: 0.8, alpha: 0.0}, ease: 'slow', duration: 2});
 };
 
 

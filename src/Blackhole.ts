@@ -124,15 +124,15 @@ export class Blackhole {
             u_tex: null,
         }
         this.lensShader = new Filter('', frag, this.uniforms);
-        this.bulgeOptions = {radius: 400, strength: 1, center: new Point(this.blackHole.x,400)};
-        this.twistOptions = {angle: 10, radius: 600, padding: 0, offset: new Point(this.blackHole.x,400)};
+        this.bulgeOptions = {radius: 300, strength: 1, center: new Point(this.blackHole.x,400)};
+        this.twistOptions = {angle: 10, radius: 300, padding: 0, offset: new Point(this.blackHole.x,400)};
         this.bloom = new AdvancedBloomFilter();
         this.bulge = new BulgePinchFilter(this.bulgeOptions);
         this.twist = new TwistFilter(this.twistOptions);
     }
 
     createBlackhole() {
-        this.blackHole.scale.set(0.7);
+        this.blackHole.scale.set(0.5);
         this.background.addChild(this.blackHole);
 
         this.outerDebris.pivot.set(985, 949);
@@ -161,11 +161,11 @@ export class Blackhole {
         this.background.filters = [this.bloom, this.bulge, this.twist];
 
         // this.hole.position.x = this.blackHole.x;
-        this.hole.position.y = 375;
+        this.hole.position.y = 350;
         // Add a circle
         this.hole.lineStyle(5, 0xffffff, 1);
         this.hole.beginFill(0x000000, 1);
-        this.hole.drawEllipse(0, 0, 250, 250);
+        this.hole.drawEllipse(0, 0, 175, 175);
         this.hole.blendMode = BLEND_MODES.MULTIPLY;
         this.hole.endFill();
         this.app.stage.addChild(this.hole);
@@ -176,7 +176,7 @@ export class Blackhole {
     }
 
     update(deltaTime: number) {
-        this.blackHole.x = this.app.screen.width / 2 + 400;
+        this.blackHole.x = this.app.screen.width / 2 + 325;
         this.hole.position.x = this.blackHole.x;
         this.twist.uniforms.offset = new Point(this.blackHole.x,400);
         this.bulge.uniforms.center = new Point(this.blackHole.x, 400);

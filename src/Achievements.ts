@@ -10,13 +10,13 @@ export class Achievements {
         this.app = app;
         this.background = background;
         this.achievements = new Container();
-        this.achievements.x = this.app.screen.width / 1 * 2.5;
-        this.achievements.y = 800;
+        this.achievements.x = this.app.screen.width / 1 * 2.2;
+        this.achievements.y = 600;
         this.halo = Sprite.from("halo.png");
     }
 
     createAchievements() {
-        this.achievements.scale.set(0.7);
+        this.achievements.scale.set(0.5);
         const tierOne = new Container();
         const tierTwo = new Container();
         const tierThree = new Container();
@@ -144,7 +144,7 @@ export class Achievements {
 
     update(deltaTime: number) {
         console.log(deltaTime);
-        this.achievements.x = this.app.screen.width / 2 + 400; 
+        this.achievements.x = this.app.screen.width / 2 + 325; 
         // this.twist.uniforms.offset = new Point(this.blackHole.x,400);
         // this.bulge.uniforms.center = new Point(this.blackHole.x, 400);
         // this.background.filters

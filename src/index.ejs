@@ -3,9 +3,9 @@
 <head>
 	<title>Pixi Hotwire</title>
 
-	<!-- <meta id="viewport" name="viewport"
-		content="width=width, height=height, minimum-scale=0.6, initial-scale=0.6, maximum-scale=0.6, user-scalable=1, shrink-to-fit=1, viewport-fit=cover" />
-	<meta name="apple-mobile-web-app-capable" content="yes"> -->
+	<meta id="viewport" name="viewport"
+		content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+	<!-- <meta name="apple-mobile-web-app-capable" content="yes"> -->
 
 	<style>
 		@font-face {
@@ -41,7 +41,7 @@
 		html,
 		body {
 			display: grid;
-			grid-template-columns: 800px 1fr 1fr;
+			grid-template-columns: 650px 1fr 1fr;
 			grid-template-rows: 1fr 1fr 1fr;
 			grid-template-areas: "header header header"
                       			 "intro content content" 
@@ -79,16 +79,16 @@
 		}
 
 		.header-cta {
-			padding: 1rem;
+			padding: 0.5rem 1rem;
 			font-family: 'sneakmono';
 			border: 1px solid white;
 			border-radius: 8px;
-			font-size: 1.5rem;
+			font-size: 1.2rem;
 		}
 
 		.drop {
 			font-family: 'sneakmono';
-			font-size: 1.3rem;
+			font-size: 1rem;
 			text-transform: uppercase;
 		}
 
@@ -100,10 +100,11 @@
 		}
 
 		.hero-container {
+			margin-top: 9rem;
 			position: relative;
 			grid-area: header / footer / intro / intro;
 			z-index: 999;
-			align-self: center;
+			align-self: start;
 			margin-left: 8rem;
 			transform: perspective(1000px) rotateY(10deg);
 			opacity: 0;
@@ -122,7 +123,7 @@
 		}
 
 		.intro p {
-			font-size: 1.8rem;
+			font-size: 1.4rem;
 		}
 
 		#sign-up {
@@ -148,7 +149,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			padding: 1.5rem;
+			padding: 1.2rem;
 			background: rgba(0,0,0,0.1);
 			color: white;
 			border: 2px solid white;
@@ -168,6 +169,7 @@
 			border-radius: 8px;
 			cursor: pointer;
 			margin-top: 4rem;
+			font-size: 1.3rem;
 			font-family: 'sneakmono';
 		}
 
@@ -215,7 +217,7 @@
 		</div>
 		<div id="sign-up">
 			Input forms, sign up details, etc.
-			<div id="sign-up-submit">TEAM UP</div>
+			<div id="sign-up-submit">Team Up</div>
 		</div>
 	</div>
 	<div id="pixi-content">
