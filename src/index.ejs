@@ -1,0 +1,151 @@
+<html>
+
+<head>
+	<title>Pixi Hotwire</title>
+
+	<meta id="viewport" name="viewport"
+		content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no, viewport-fit=cover" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<style>
+		html,
+		body {
+			display: grid;
+			grid-template-columns: 800px 1fr 1fr;
+			grid-template-rows: 1fr 1fr 1fr;
+			grid-template-areas: "header header header"
+                      			 "intro content content" 
+                      			 "footer footer footer";
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			width: 100vw;
+			/* overflow-x: hidden; */
+			background-color: #000000;
+			color: white;
+		}
+
+		header {
+			grid-area: header;
+			/* position: fixed; */
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 0 2rem;
+			background-color: rgba(0,0,0,0.8);
+			backdrop-filter: blur(8px);
+			height: 100px;
+			/* width: 100%; */
+			color: white;
+			font-size: 2rem;
+			font-weight: 900;
+			border-bottom: 1px solid rgba(255,255,255,0.1);
+			text-align: center;;
+		}
+
+		.drop {
+			font-family: 'Sneak Mono';
+			font-size: 1.3rem;
+			text-transform: uppercase;
+		}
+
+		#pixi-content {
+			background: #000000;
+			grid-area: header / footer / header / footer;
+			/* width: 100%;
+			height: 100%; */
+		}
+
+		.hero-container {
+			position: relative;
+			grid-area: header / footer / intro / intro;
+			z-index: 999;
+			align-self: center;
+			margin-left: 8rem;
+			transform: perspective(1000px) rotateY(10deg);
+			opacity: 0;
+		}
+
+		.intro {
+			font-size: 2rem;
+			font-family: 'GT Sectra';
+			text-shadow: 0px 4px 40px rgba(0,0,0,1);
+		}
+
+		.intro h1 {
+			line-height: 0.9;
+			font-weight: 900;
+		}
+
+		#sign-up {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			top: 0;
+			position: absolute;
+			background: rgba(0,0,0,0.6);
+			border: solid 2px white;
+			border-radius: 8px;
+			height: 100%;
+			width: 100%;
+			grid-area: header / footer / intro / intro;
+			z-index: 99999;
+			transform: scale(0.75);
+			font-size: 2rem;
+			opacity: 0;
+		}
+
+		#cta-hero {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 1.5rem;
+			background: rgba(0,0,0,0.1);
+			color: white;
+			border: 2px solid white;
+			border-radius: 8px;
+			cursor: pointer;
+			font-family: 'Sneak Mono';
+		}
+
+		#sign-up-submit {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 1.5rem;
+			background: rgba(0,0,0,0.1);
+			color: white;
+			border: 2px solid white;
+			border-radius: 8px;
+			cursor: pointer;
+			margin-top: 4rem;
+			font-family: 'Sneak Mono';
+		}
+	</style>
+
+</head>
+
+<body>
+	<header><span>BLASEBALL</span><span class="drop">The Next Drop is Friday, Oct 7th
+		3:04:21 pm PST</span><span>SADDLE UP</span></header>
+	<!-- <noscript>Please enable JavaScript in your web browser to view this page.</noscript> -->
+	<div class="hero-container">
+		<div class="intro">
+			<h1>Blaseball is Returning</h1>
+			<p>After a long hiatus, or a quantum blip, Blaseball is Returning. Everyone’s favorite massively multiplayer horror Internet Blaseball League returns with a Big Bang.</p>
+			<p>Mere seconds after a Black Hole swallowed the League, the Universe, and everyone we came to love (and loathe), a rift opens up over the Desert.</p>
+			<p>Will the Fans Team Up to help the player’s escape the pull of The Black Hole? Or will the memories of the past be scattered like the Sands of Time?</p>
+			<div id="cta-hero">SADDLE UP</div>
+		</div>
+		<div id="sign-up">
+			Input forms, sign up details, etc.
+			<div id="sign-up-submit">TEAM UP</div>
+		</div>
+	</div>
+	<div id="pixi-content">
+		<canvas id="pixi-canvas" />
+	</div>
+</body>
+
+</html>
