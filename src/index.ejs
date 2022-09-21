@@ -9,37 +9,38 @@
 
 	<style>
 		@font-face {
-    font-family: 'gt_sectrablack';
-    src: url('gt-sectra-black-webfont.woff2') format('woff2'),
-         url('gt-sectra-black-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+			font-family: 'gt_sectrablack';
+			src: url('gt-sectra-black-webfont.woff2') format('woff2'),
+				url('gt-sectra-black-webfont.woff') format('woff');
+			font-weight: normal;
+			font-style: normal;
 
-}
-
-
+		}
 
 
-@font-face {
-    font-family: 'gt_sectraregular';
-    src: url('gt-sectra-regular-webfont.woff2') format('woff2'),
-         url('gt-sectra-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+		@font-face {
+			font-family: 'gt_sectraregular';
+			src: url('gt-sectra-regular-webfont.woff2') format('woff2'),
+				url('gt-sectra-regular-webfont.woff') format('woff');
+			font-weight: normal;
+			font-style: normal;
 
-}
+		}
 
-@font-face {
-    font-family: 'sneakmono';
-    src: url('sneak-mono-webfont.woff2') format('woff2'),
-         url('sneak-mono-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+		@font-face {
+			font-family: 'sneakmono';
+			src: url('sneak-mono-webfont.woff2') format('woff2'),
+				url('sneak-mono-webfont.woff') format('woff');
+			font-weight: normal;
+			font-style: normal;
 
-}
+		}
 
 		html,
 		body {
+
+			--color1: white;
+			--color2: white;
 			display: grid;
 			grid-template-columns: 650px 1fr 1fr;
 			grid-template-rows: 1fr 1fr 1fr;
@@ -111,7 +112,7 @@
 		}
 
 		.intro {
-			font-size: 2rem;
+			font-size: 1.5rem;
 			font-family: 'gt_sectraregular';
 			text-shadow: 0px 4px 40px rgba(0,0,0,1);
 		}
@@ -120,10 +121,65 @@
 			line-height: 0.9;
 			font-weight: 900;
 			font-family: 'gt_sectrablack';
+			text-align: justify;
 		}
 
 		.intro p {
-			font-size: 1.4rem;
+			font-size: 1.2rem;
+			text-align: justify;
+		}
+
+		.count-cta-lockup {
+			margin-top: 2rem;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.count-cta-lockup p {
+			font-family: 'sneakmono';
+			text-transform: uppercase;
+			text-align: center;
+		}
+
+		.count-container {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		.count-number {
+			display: flex;
+			flex-grow: 1;
+			margin-right: 1rem;
+			padding: 1rem 1rem;
+			align-items: center;
+			justify-content: center;
+			border: 2px solid white;
+			font-family: 'sneakmono';
+			font-size: 3rem;
+			border-radius: 8px;
+		}
+
+		.count-number:last-child {
+			margin-right: 0;
+		}
+
+		.signup-count {
+			margin: 0;
+			font-family: 'sneakmono' !important;
+		}
+
+		#cta-hero {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 1.2rem;
+			background: white;
+			color: black;
+			border: 2px solid white;
+			border-radius: 8px;
+			cursor: pointer;
+			font-family: 'sneakmono';
 		}
 
 		#sign-up {
@@ -143,19 +199,6 @@
 			transform: scale(0.75);
 			font-size: 2rem;
 			opacity: 0;
-		}
-
-		#cta-hero {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			padding: 1.2rem;
-			background: rgba(0,0,0,0.1);
-			color: white;
-			border: 2px solid white;
-			border-radius: 8px;
-			cursor: pointer;
-			font-family: 'sneakmono';
 		}
 
 		#sign-up-submit {
@@ -213,7 +256,18 @@
 			<p>After a long hiatus, or a quantum blip, Blaseball is Returning. Everyone’s favorite massively multiplayer horror Internet Blaseball League returns with a Big Bang.</p>
 			<p>Mere seconds after a Black Hole swallowed the League, the Universe, and everyone we came to love (and loathe), a rift opens up over the Desert.</p>
 			<p>Will the Fans Team Up to help the player’s escape the pull of The Black Hole? Or will the memories of the past be scattered like the Sands of Time?</p>
-			<div id="cta-hero">Sign Up</div>
+			<div class="count-cta-lockup">
+					<!-- Select the text in the preview and type in your own -->
+					<div class="count-container">
+						<span class="count-number">8</span>
+						<span class="count-number">5</span>
+						<span class="count-number">6</span>
+						<span class="count-number">7</span>
+						<span class="count-number">8</span>
+					</div>
+				<p>Fan(atics) want to see the next tier</p>
+				<div id="cta-hero">Join Them</div>
+			</div>
 		</div>
 		<div id="sign-up">
 			Input forms, sign up details, etc.
